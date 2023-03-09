@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:Employees="http://www.tibco.com/schemas/firstProject/Resources/Schemas/Models/Employees"
+	 xmlns:Addresses="http://www.tibco.com/schemas/firstProject/Resources/Schemas/Models/Addresses"
+	 targetNamespace="http://www.tibco.com/schemas/firstProject/Resources/Schemas/Models/Employees"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.tibco.com/schemas/firstProject/Resources/Schemas/Models/Addresses" schemaLocation="Addresses.xsd"/>
+	<xs:element name="Employees">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Employees:EmployeeId"/>
+				<xs:element ref="Employees:FirstName"/>
+				<xs:element ref="Employees:LastName"/>
+				<xs:element ref="Employees:Age"/>
+				<xs:element ref="Addresses:Address"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EmployeeId" type="xs:string"/>
+	<xs:element name="FirstName" type="xs:string"/>
+	<xs:element name="LastName" type="xs:string"/>
+	<xs:element name="Age" type="xs:int"/>
+	<xs:element name="Address" type="xs:string"/>
+</xs:schema>
